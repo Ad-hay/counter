@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>tutorial</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div>
+            <p id="welcome-el"></p>
+            <h1>People Entered:</h1>
+            <h2 id="count-el">0</h2>
+            <!-- creating increment button -->
+            <button type="button" id="increment-btn" onclick="increment()">increment</button>
+            <button type="button" id="decrease-btn" onclick="decrease()">decrease</button>
+            <button type="button" id="save-btn" onclick="save()">save</button>
+            <p id="save-el">Previous Entries : </p>
+
+            <h1>Total Count:</h1>
+            <h2 id="total-el">0</h2>
+        </div>
+        <script>
+            let countEl = document.getElementById('count-el')
+            let count = 0;
+            let welcomeEl = document.getElementById("welcome-el")
+            let name ="Adhay "
+            let greeting ="Welcome back "
+            welcomeEl.innerHTML = greeting + name 
+            welcomeEl.innerHTML += "&#x270B"
+            let saveEl = document.getElementById("save-el")
+            let totalEl = document.getElementById("total-el")
+            
+            function increment() {
+                count += 1
+                countEl.innerHTML = count
+            }
+
+            function decrease() {
+                count -= 1
+                countEl.innerHTML = count
+            }
+
+            function save() {
+                let countStr = count + " , "
+                saveEl.textContent += countStr
+                count = 0
+                countEl.innerHTML = count
+            }
+        </script>
+    </body>
+</html>
